@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Initialize React Native Project",
+			"type": "shell",
+			"command": "npx react-native init LocalVolunteerConnector --template react-native-template-typescript",
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
