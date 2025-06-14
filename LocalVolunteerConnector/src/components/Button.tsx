@@ -42,9 +42,8 @@ const Button: React.FC<ButtonProps> = ({
     disabled && styles.disabled,
     style,
   ];
-
   const textStyles = [
-    styles.text,
+    styles.buttonText,
     styles[`${variant}Text`],
     styles[`${size}Text`],
     disabled && styles.disabledText,
@@ -114,9 +113,8 @@ const styles = StyleSheet.create({
   // Disabled state
   disabled: {
     opacity: 0.6,
-  },
-  // Text styles
-  text: {
+  },  // Text styles
+  buttonText: {
     fontWeight: Typography.weights.medium,
     textAlign: 'center',
   },

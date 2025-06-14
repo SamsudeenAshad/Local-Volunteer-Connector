@@ -7,6 +7,8 @@ export const Colors = {
   accent: '#FF6B6B',
   background: '#F8F9FA',
   surface: '#FFFFFF',
+  white: '#FFFFFF',
+  black: '#000000',
   text: '#2C3E50',
   textSecondary: '#7F8C8D',
   border: '#E1E8ED',
@@ -46,6 +48,31 @@ export const Typography = {
     medium: '500' as const,
     bold: '700' as const,
   },
+  h1: {
+    fontSize: 32,
+    fontWeight: '700' as const,
+    lineHeight: 40,
+  },
+  h2: {
+    fontSize: 24,
+    fontWeight: '700' as const,
+    lineHeight: 32,
+  },
+  h3: {
+    fontSize: 20,
+    fontWeight: '600' as const,
+    lineHeight: 28,
+  },
+  body: {
+    fontSize: 16,
+    fontWeight: '400' as const,
+    lineHeight: 24,
+  },
+  caption: {
+    fontSize: 12,
+    fontWeight: '400' as const,
+    lineHeight: 16,
+  },
 };
 
 export const BorderRadius = {
@@ -53,7 +80,7 @@ export const BorderRadius = {
   md: 8,
   lg: 12,
   xl: 16,
-  round: 50,
+  full: 50,
 };
 
 export const Shadows = {

@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { RootState } from '../store';
-import { RootStackParamList, MainTabParamList } from '../types';
 import { Colors, Typography } from '../utils/theme';
 
 // Auth Screens
@@ -29,10 +28,9 @@ import EventDetailsScreen from '../screens/details/EventDetailsScreen';
 import ChatRoomScreen from '../screens/details/ChatRoomScreen';
 import CreateEventScreen from '../screens/details/CreateEventScreen';
 import EditProfileScreen from '../screens/details/EditProfileScreen';
-import SettingsScreen from '../screens/details/SettingsScreen';
 
-const Stack = createStackNavigator<RootStackParamList>();
-const Tab = createBottomTabNavigator<MainTabParamList>();
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const AuthStack = () => (
   <Stack.Navigator
@@ -40,9 +38,10 @@ const AuthStack = () => (
       headerStyle: {
         backgroundColor: Colors.primary,
       },
-      headerTintColor: Colors.surface,
+      headerTintColor: Colors.white,
       headerTitleStyle: {
-        fontWeight: Typography.weights.bold,
+        ...Typography.h3,
+        fontWeight: '600',
       },
     }}>
     <Stack.Screen 
@@ -92,23 +91,23 @@ const MainTabs = () => (
         return <Icon name={iconName} size={size} color={color} />;
       },
       tabBarActiveTintColor: Colors.primary,
-      tabBarInactiveTintColor: Colors.textSecondary,
-      tabBarStyle: {
-        backgroundColor: Colors.surface,
+      tabBarInactiveTintColor: Colors.textSecondary,      tabBarStyle: {
+        backgroundColor: Colors.white,
         borderTopColor: Colors.border,
         paddingVertical: 5,
         height: 60,
       },
       tabBarLabelStyle: {
-        fontSize: Typography.sizes.xs,
+        fontSize: 12,
         fontWeight: Typography.weights.medium,
         marginBottom: 5,
       },
       headerStyle: {
         backgroundColor: Colors.primary,
       },
-      headerTintColor: Colors.surface,
+      headerTintColor: Colors.white,
       headerTitleStyle: {
+        fontSize: 18,
         fontWeight: Typography.weights.bold,
       },
     })}>
@@ -146,8 +145,9 @@ const MainStack = () => (
       headerStyle: {
         backgroundColor: Colors.primary,
       },
-      headerTintColor: Colors.surface,
+      headerTintColor: Colors.white,
       headerTitleStyle: {
+        fontSize: 18,
         fontWeight: Typography.weights.bold,
       },
     }}>
@@ -170,16 +170,10 @@ const MainStack = () => (
       name="CreateEvent" 
       component={CreateEventScreen}
       options={{ title: 'Create Event' }}
-    />
-    <Stack.Screen 
+    />    <Stack.Screen 
       name="EditProfile" 
       component={EditProfileScreen}
       options={{ title: 'Edit Profile' }}
-    />
-    <Stack.Screen 
-      name="Settings" 
-      component={SettingsScreen}
-      options={{ title: 'Settings' }}
     />
   </Stack.Navigator>
 );
