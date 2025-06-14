@@ -131,12 +131,11 @@ const ProfileScreen = () => {
 
   const renderHeader = () => (
     <View style={styles.header}>
-      <View style={styles.profileImageContainer}>
-        <Image
+      <View style={styles.profileImageContainer}>        <Image
           source={
             user?.profilePicture 
               ? { uri: user.profilePicture }
-              : require('../../assets/images/default-avatar.png')
+              : { uri: 'https://via.placeholder.com/100x100/E0E0E0/757575?text=User' }
           }
           style={styles.profileImage}
         />
